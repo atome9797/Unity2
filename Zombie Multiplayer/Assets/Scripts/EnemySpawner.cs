@@ -47,6 +47,7 @@ public class EnemySpawner : MonoBehaviourPun, IPunObservable {
     }
 
     void Awake() {
+        //직렬화 소스
         PhotonPeer.RegisterType(typeof(Color), 128, ColorSerialization.SerializeColor,
             ColorSerialization.DeserializeColor);
     }

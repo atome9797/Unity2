@@ -30,6 +30,8 @@ public class LivingEntity : MonoBehaviourPun, IDamageable {
     // 호스트에서 먼저 단독 실행되고, 호스트를 통해 다른 클라이언트들에서 일괄 실행됨
     [PunRPC]
     public virtual void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal) {
+
+        //다른 클라이언트가 실행할때 이부분은 실행 안됨으로 호스트 체력이 반영되는일을 없다. 죽었는지 아닌지만 처리한다.
         if (PhotonNetwork.IsMasterClient)
         {
             // 데미지만큼 체력 감소
